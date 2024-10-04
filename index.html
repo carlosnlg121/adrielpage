@@ -18,76 +18,112 @@
             margin-top: 20px;
         }
 
-        /* Centralizar os links do body */
+        /* Estilo para o container de cartões */
         .content {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            flex-grow: 1;
+            flex-wrap: wrap; /* Permite que os cartões se movam para a linha seguinte quando não houver espaço */
+            justify-content: center; /* Centraliza os cartões horizontalmente */
+            gap: 20px; /* Espaçamento entre os cartões */
+            padding: 20px; /* Espaçamento ao redor dos cartões */
+            flex-grow: 1; /* Permite que o conteúdo cresça para preencher a área disponível */
         }
 
-        ul {
-            list-style-type: none;
-            padding: 0;
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s;
+            text-align: center;
+            width: calc(25% - 20px); /* Cada cartão ocupa 25% da largura do container, menos a margem */
+            max-width: 220px; /* Limita a largura máxima do cartão */
+            min-width: 180px; /* Define uma largura mínima para o cartão */
+            box-sizing: border-box; /* Garante que o padding e a borda sejam incluídos na largura */
         }
 
-        li {
-            margin: 10px 0;
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%; /* Faz a imagem ocupar toda a largura do cartão */
+            height: auto; /* Mantém a proporção da imagem */
+        }
+
+        .card-title {
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
         }
 
         /* Estilo para os links */
         a {
-            color: white;
-            font-size: 18px;
             text-decoration: none;
-            font-weight: bold;
+            color: inherit; /* Mantém a cor do texto do cartão */
         }
 
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* Estilo para o rodapé */
+        /* Estilo para o footer */
         footer {
-            display: flex;
-            justify-content: center;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.2);
+            text-align: center; /* Centraliza o conteúdo no footer */
+            padding: 10px; /* Adiciona um pouco de espaçamento */
+            background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente */
+            border-top: 1px solid #ccc; /* Adiciona uma borda superior */
         }
 
-        /* Estilo para o ícone e o texto do Instagram */
         .instagram-link {
-            display: flex;
-            align-items: center;
+            display: inline-flex; /* Permite que o ícone e o texto fiquem na mesma linha */
+            align-items: center; /* Centraliza verticalmente o ícone e o texto */
+            color: black; /* Altera a cor do texto */
         }
 
         .instagram-link img {
-            width: 50px;
-            height: 50px;
-            margin-right: 10px;
+            width: 24px; /* Tamanho do ícone do Instagram */
+            height: auto; /* Mantém a proporção do ícone */
+            margin-right: 8px; /* Espaço entre o ícone e o texto */
         }
 
-        .instagram-link span {
-            font-size: 18px;
-            color: white;
+        /* Media query para garantir que o layout se adapte a telas menores */
+        @media (max-width: 768px) {
+            .card {
+                width: calc(50% - 20px); /* Ajusta para 2 cartões por linha em telas menores */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                width: 100%; /* Um cartão por linha em telas muito pequenas */
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1 style="color: white;">Descubra as Melhores Ofertas com Adriel</h1>
+        <h1 style="color: white;">Descubra as Melhores Ofertas</h1>
     </header>
 
     <!-- Div para centralizar o conteúdo -->
     <div class="content">
-        <ul>
-            <li><a href="https://s.shopee.com.br/6fP0w40iel">Kit Câmera Segurança Prova D'água Infravermelho Lâmpada Sem Fio Wifi - APP</a></li>
-        </ul>
+        <div class="card">
+            <a href="https://s.shopee.com.br/6fP0w40iel" target="_blank">
+                <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-lndjf1hg8s7g30@resize_w450_nl.webp" alt="Kit Câmera Segurança">
+                <div class="card-title">Kit Câmera Segurança Prova D'água Infravermelho Lâmpada Sem Fio Wifi - APP</div>
+            </a>
+        </div>
+        <div class="card">
+            <a href="https://s.shopee.com.br/6fP0w40iel" target="_blank">
+                <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-lndjf1hg8s7g30@resize_w450_nl.webp" alt="Kit Câmera Segurança">
+                <div class="card-title">Kit Câmera Segurança Prova D'água Infravermelho Lâmpada Sem Fio Wifi - APP</div>
+            </a>
+        </div>
+        <div class="card">
+            <a href="https://s.shopee.com.br/6fP0w40iel" target="_blank">
+                <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-lndjf1hg8s7g30@resize_w450_nl.webp" alt="Kit Câmera Segurança">
+                <div class="card-title">Kit Câmera Segurança Prova D'água Infravermelho Lâmpada Sem Fio Wifi - APP</div>
+            </a>
+        </div>       
     </div>
 
     <footer>
-        <!-- Ícone do Instagram com o link e texto -->
         <a class="instagram-link" href="https://www.instagram.com/adrieljcardoso?igsh=MTViNjRmNXAycTQ2bQ==" target="_blank">
             <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
             <span>@adrieljcardoso</span>
